@@ -17,6 +17,9 @@ import json
 from flask import make_response
 import requests
 
+# Load client_secrets.json from Google API Credentials
+CLIENT_ID = json.loads(open('client_secrets.json', 'r').read())['web']['client_id']
+
 #Connect to Database and create database session
 engine = create_engine('sqlite:///restaurantmenu.db')
 Base.metadata.bind = engine
